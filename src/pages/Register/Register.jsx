@@ -3,25 +3,30 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
-const Login = () => {
-  const { signIn } = useContext(AuthContext);
+const Register = () => {
+  const { signUp, updateUserProfile, logOut } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    signIn(data.email, data.password)
-      .then((res) => console.log(res))
+    signUp(data.email, data.password)
+      .then((res) => {
+        console.log(res);
+        reset();
+      })
       .catch((error) => console.log(error));
   };
+
   return (
     <div className="bg-white my-20">
       <div>
-        <h1 className="text-5xl font-bold text-center mb-10">Login now!</h1>
+        <h1 className="text-5xl font-bold text-center mb-10">Register now!</h1>
       </div>
       <div className="hero">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
             <lottie-player
               src="https://assets4.lottiefiles.com/private_files/lf30_ONrIKs.json"
@@ -34,6 +39,36 @@ const Login = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  {...register("name", { required: true })}
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  className="input input-bordered"
+                />
+                {errors.name && (
+                  <span className="text-red-600">Name is required</span>
+                )}
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input
+                  {...register("photo", { required: true })}
+                  type="text"
+                  name="photo"
+                  placeholder="photo url"
+                  className="input input-bordered"
+                />
+                {errors.photo && (
+                  <span className="text-red-600">Photo URL is required</span>
+                )}
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -70,16 +105,16 @@ const Login = () => {
               <div className="form-control mt-6">
                 <input
                   type="submit"
-                  value="Login"
+                  value="Register"
                   className="btn text-white bg-[#6E479E] hover:bg-[#1E0935]"
                 />
               </div>
             </form>
             <div className="mb-5 text-center">
               <p>
-                Already have an account? <br></br>Please{" "}
+                Already has an account? <br></br>Please{" "}
                 <span className="text-blue-700 font-bold">
-                  <Link to="/register">Register</Link>
+                  <Link to="/login">Login</Link>
                 </span>
               </p>
             </div>
@@ -90,4 +125,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
