@@ -45,11 +45,9 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar  bg-gradient-to-r from-[#03052B] to-[#1E0935]  text-white hover:text-[#CD8B7C]">
+    <div className="navbar bg-[#6E479E] text-white">
       <div className="navbar-start">
-        <a className="text-xl">
-          <img src="/logo.avif" className="h-[50px] w-[50px]" alt="" />
-        </a>
+        <a className="text-xl">{/* Use logo here */}</a>
         <p>SerenadeAcademy</p>
       </div>
       <div className="navbar-center hidden lg:flex">
