@@ -20,7 +20,7 @@ const PopularClasses = () => {
         {popularClasses?.map((singleClass) => (
           <div
             key={singleClass?.id}
-            className="card w-full bg-base-100 shadow-xl border"
+            className="card w-full shadow-xl border bg-[#6e479e3c]"
           >
             <div className="card-body">
               <h2 className="card-title">{singleClass?.name}</h2>

@@ -22,7 +22,7 @@ const PopularInstructors = () => {
         {popularInstructors.map((singleInstructor) => (
           <div
             key={singleInstructor.id}
-            className="card lg:card-side bg-base-100 shadow-xl"
+            className="card lg:card-side bg-base-100 shadow-xl border border-[#6e479e3c]"
           >
             <figure>
               <img
@@ -35,9 +35,6 @@ const PopularInstructors = () => {
               <h2 className="card-title">{singleInstructor.name}</h2>
               <p>Number of classes: {singleInstructor.classes}</p>
               <p>Number of students: {singleInstructor.numberOfStudents}</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Listen</button>
-              </div>
             </div>
           </div>
         ))}
