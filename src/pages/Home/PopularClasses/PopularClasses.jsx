@@ -20,17 +20,18 @@ const PopularClasses = () => {
         {popularClasses?.map((singleClass) => (
           <div
             key={singleClass?.id}
-            className="card w-96 bg-base-100 shadow-xl"
+            className="card w-full bg-base-100 shadow-xl border"
           >
             <div className="card-body">
-              <h2 className="card-title">{singleClass.name}</h2>
-              <p>Instructor: {singleClass.instructor}</p>
-              <p>Number of students: {singleClass.numberOfStudents}</p>
-              <p>Available Seats: {singleClass.availableSeats}</p>
+              <h2 className="card-title">{singleClass?.name}</h2>
+              <p>Instructor: {singleClass?.instructor}</p>
+              <p>Number of students: {singleClass?.numberOfStudents}</p>
+              <p>Available Seats: {singleClass?.availableSeats}</p>
             </div>
             <figure>
               <img
-                src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                className="h-[400px] w-[360px]"
+                src={singleClass?.image}
                 alt="Shoes"
               />
             </figure>
