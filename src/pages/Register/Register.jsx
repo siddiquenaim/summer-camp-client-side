@@ -12,12 +12,14 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    signUp(data.email, data.password)
-      .then((res) => {
-        console.log(res);
-        reset();
-      })
-      .catch((error) => console.log(error));
+    if (data.password === data.confirmPassword) {
+      signUp(data.email, data.password)
+        .then((res) => {
+          console.log(res);
+          reset();
+        })
+        .catch((error) => console.log(error));
+    }
   };
 
   return (
@@ -96,11 +98,31 @@ const Register = () => {
                 {errors.password && (
                   <span className="text-red-600">This field is required</span>
                 )}
+              </div>
+              <div className="form-control">
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
+                  <span className="label-text">Confirm Password</span>
                 </label>
+                <input
+                  type="password"
+                  className="input input-bordered"
+                  placeholder="Confirm Password"
+                  {...register("confirmPassword", { required: true })}
+                />
+                {errors.password && (
+                  <span className="text-red-600">This field is required</span>
+                )}
+              </div>
+              <div className="form-control hidden">
+                <label className="label">
+                  <span className="label-text">Confirm Password</span>
+                </label>
+                <input
+                  type="text"
+                  className="input input-bordered"
+                  defaultValue="student"
+                  {...register("role", { required: true })}
+                />
               </div>
               <div className="form-control mt-6">
                 <input
