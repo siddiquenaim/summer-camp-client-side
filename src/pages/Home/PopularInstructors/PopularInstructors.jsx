@@ -7,7 +7,7 @@ const PopularInstructors = () => {
   useEffect(() => {
     axios
       .get("http://localhost:5000/popular-instructors")
-      .then((response) => setPopularInstructors(response.data))
+      .then((res) => setPopularInstructors(res.data))
       .catch((error) => {
         console.error("Error fetching popular instructors:", error);
       });
