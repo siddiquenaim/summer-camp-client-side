@@ -38,7 +38,7 @@ const Navbar = () => {
                 {allSelectedClass[0]?.length}
               </span>
 
-              <NavLink to="/student-dashboard">Dashboard</NavLink>
+              <NavLink to="/dashboard">Dashboard</NavLink>
             </div>
           </li>
         </>

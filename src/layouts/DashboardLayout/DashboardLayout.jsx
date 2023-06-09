@@ -41,7 +41,7 @@ const DashboardLayout = () => {
             {isAdmin && (
               <>
                 <li className="mb-3">
-                  <NavLink to="">
+                  <NavLink to="/dashboard/all-users">
                     <FaUsers></FaUsers> All Users
                   </NavLink>
                 </li>
