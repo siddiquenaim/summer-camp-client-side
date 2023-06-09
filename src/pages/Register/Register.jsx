@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { signUp, updateUserProfile, logOut } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -16,9 +19,26 @@ const Register = () => {
       signUp(data.email, data.password)
         .then((res) => {
           console.log(res);
-          reset();
+          updateUserProfile(data.name, data.photo)
+            .then((res) => {
+              console.log(res);
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "User has been created successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              setError("");
+              reset();
+              navigate("/login");
+              logOut();
+            })
+            .catch((error) => console.log(error));
         })
         .catch((error) => console.log(error));
+    } else {
+      setError("The passwords don't match");
     }
   };
 
@@ -56,6 +76,7 @@ const Register = () => {
                   <span className="text-red-600">Name is required</span>
                 )}
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Photo URL</span>
@@ -71,6 +92,7 @@ const Register = () => {
                   <span className="text-red-600">Photo URL is required</span>
                 )}
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -85,20 +107,43 @@ const Register = () => {
                   <span className="text-red-600">This field is required</span>
                 )}
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
                 <input
+                  {...register("password", {
+                    required: true,
+                    minLength: 6,
+                    pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+                  })}
                   type="password"
+                  name="password"
+                  placeholder="password"
                   className="input input-bordered"
-                  placeholder="Your Password"
-                  {...register("password", { required: true })}
                 />
-                {errors.password && (
-                  <span className="text-red-600">This field is required</span>
+                {errors.password?.type === "minLength" && (
+                  <span className="text-red-600">6 characters required</span>
                 )}
+                {errors.password?.type === "required" && (
+                  <span className="text-red-600">
+                    Password field is required
+                  </span>
+                )}
+                {errors.password?.type === "pattern" && (
+                  <span className="text-red-600">
+                    Pass must have one upper case, one lower case, one number
+                    and one special character.
+                  </span>
+                )}
+                <label className="label">
+                  <a href="#" className="label-text-alt link link-hover">
+                    Forgot password?
+                  </a>
+                </label>
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
@@ -107,12 +152,15 @@ const Register = () => {
                   type="password"
                   className="input input-bordered"
                   placeholder="Confirm Password"
+                  minLength={6}
                   {...register("confirmPassword", { required: true })}
                 />
-                {errors.password && (
+                {errors.confirmPassword?.type === "required" && (
                   <span className="text-red-600">This field is required</span>
                 )}
+                {error ? <p className="text-red-600">{error}</p> : ""}
               </div>
+
               <div className="form-control hidden">
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
@@ -124,6 +172,7 @@ const Register = () => {
                   {...register("role", { required: true })}
                 />
               </div>
+
               <div className="form-control mt-6">
                 <input
                   type="submit"

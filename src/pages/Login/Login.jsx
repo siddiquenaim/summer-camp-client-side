@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -12,7 +16,17 @@ const Login = () => {
   } = useForm();
   const onSubmit = (data) => {
     signIn(data.email, data.password)
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        navigate(from);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Logged in successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
       .catch((error) => console.log(error));
   };
   return (

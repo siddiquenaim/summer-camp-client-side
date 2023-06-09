@@ -3,6 +3,10 @@ import React from "react";
 const ClassCard = (singleClass) => {
   //   console.log(singleClass.singleClass.name);
 
+  const handleSelectClass = (selectedClass) => {
+    console.log(selectedClass);
+  };
+
   return (
     <div className="card w-96 bg-base-100 shadow-xl border">
       <figure className="px-10 pt-10">
@@ -14,9 +18,14 @@ const ClassCard = (singleClass) => {
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{singleClass.singleClass.name}</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <p>The best class ever</p>
         <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+          <button
+            onClick={() => handleSelectClass(singleClass.singleClass)}
+            className="btn btn-primary"
+          >
+            Select Class
+          </button>
         </div>
       </div>
     </div>

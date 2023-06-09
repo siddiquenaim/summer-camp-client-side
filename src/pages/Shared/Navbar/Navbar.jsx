@@ -29,7 +29,7 @@ const Navbar = () => {
             <Link onClick={handleLogOut}>Logout</Link>
           </li>
           <li>
-            <NavLink to="dashboard">Dashboard</NavLink>
+            <NavLink to="student-dashboard">Dashboard</NavLink>
           </li>
         </>
       ) : (
@@ -57,7 +57,7 @@ const Navbar = () => {
         {user && (
           <div className="avatar">
             <div className="w-12 rounded-full hover:ring ring-primary ring-offset-base-100 ring-offset-2 hover:cursor-pointer">
-              <img src={user?.displayImage} />
+              <img src={user?.photoURL} />
             </div>
           </div>
         )}
