@@ -19,7 +19,7 @@ const PopularClasses = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {popularClasses?.map((singleClass) => (
           <div
-            key={singleClass?.id}
+            key={singleClass?._id}
             className="card w-full shadow-xl border bg-[#6e479e3c]"
           >
             <div className="card-body">

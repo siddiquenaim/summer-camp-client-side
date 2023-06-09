@@ -1,10 +1,56 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ClassCard = (singleClass) => {
-  //   console.log(singleClass.singleClass.name);
+  const { user } = useContext(AuthContext);
+  const [disabled, setDisabled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const handleSelectClass = (singleClass) => {
+    const { _id, name, image, price } = singleClass;
 
-  const handleSelectClass = (selectedClass) => {
-    console.log(selectedClass);
+    if (user && user?.email) {
+      const selectedClass = {
+        classId: _id,
+        name,
+        image,
+        price,
+        email: user?.email,
+      };
+
+      axios
+        .post("http://localhost:5000/add-selected-class", selectedClass)
+        .then((res) => {
+          console.log(res.data);
+          if (res.data.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Class selected successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            setDisabled(true);
+          }
+        })
+        .catch((error) => console.log(error));
+    } else {
+      Swal.fire({
+        title: "Please login to select a class!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#6E479E",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
   };
 
   return (
@@ -21,6 +67,7 @@ const ClassCard = (singleClass) => {
         <p>The best class ever</p>
         <div className="card-actions">
           <button
+            disabled={disabled}
             onClick={() => handleSelectClass(singleClass.singleClass)}
             className="btn btn-primary"
           >

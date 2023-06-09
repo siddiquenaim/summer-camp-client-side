@@ -18,7 +18,7 @@ const Login = () => {
     signIn(data.email, data.password)
       .then((res) => {
         console.log(res);
-        navigate(from);
+        navigate(from, { replace: true });
         Swal.fire({
           position: "center",
           icon: "success",
