@@ -6,8 +6,8 @@ import Register from "../pages/Register/Register";
 import Instructors from "../pages/Instructors/Instructors";
 import Classes from "../pages/Classes/Classes";
 import DashboardLayout from "../layouts/DashboardLayout/DashboardLayout";
-import StudentHome from "../pages/Dashboard/studentDashboard/studentHome";
 import PrivateRoute from "./PrivateRoute";
+import BookedClasses from "../pages/Dashboard/BookedClasses/BookedClasses";
 
 export const router = createBrowserRouter([
   {
@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
         path: "",
         element: (
           <PrivateRoute>
-            <StudentHome></StudentHome>
+            <BookedClasses></BookedClasses>
           </PrivateRoute>
         ),
       },

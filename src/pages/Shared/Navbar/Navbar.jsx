@@ -20,11 +20,11 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="instructors">Instructors</NavLink>
+        <NavLink to="/instructors">Instructors</NavLink>
       </li>
 
       <li>
-        <NavLink to="classes">Classes</NavLink>
+        <NavLink to="/classes">Classes</NavLink>
       </li>
 
       {user ? (
@@ -38,11 +38,7 @@ const Navbar = () => {
                 {allSelectedClass[0]?.length}
               </span>
 
-              {location.pathname === "/student-dashboard" ? (
-                <NavLink to="">Dashboard</NavLink>
-              ) : (
-                <NavLink to="student-dashboard">Dashboard</NavLink>
-              )}
+              <NavLink to="/student-dashboard">Dashboard</NavLink>
             </div>
           </li>
         </>
