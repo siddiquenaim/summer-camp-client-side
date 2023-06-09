@@ -6,3 +6,13 @@
   font-family: "Geologica", sans-serif;
   font-family: "Roboto", sans-serif;
 }
+
+.drawer-side a.active {
+  color: white;
+  background: #4d0862;
+}
+
+.drawer-side a:hover {
+  color: white;
+  background: #6e479e;
+}

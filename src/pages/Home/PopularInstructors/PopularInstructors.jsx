@@ -21,7 +21,7 @@ const PopularInstructors = () => {
       <div className="grid md:grid-cols-2 gap-5">
         {popularInstructors.map((singleInstructor) => (
           <div
-            key={singleInstructor.id}
+            key={singleInstructor._id}
             className="card lg:card-side bg-base-100 shadow-xl border border-[#6e479e3c]"
           >
             <figure>

@@ -1,14 +1,18 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import useSelectedClasses from "../../../hooks/useSelectedClasses";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const location = useLocation();
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.log(error));
   };
+
+  const allSelectedClass = useSelectedClasses();
 
   const navItems = (
     <>
@@ -29,7 +33,17 @@ const Navbar = () => {
             <Link onClick={handleLogOut}>Logout</Link>
           </li>
           <li>
-            <NavLink to="student-dashboard">Dashboard</NavLink>
+            <div className="indicator">
+              <span className="indicator-item badge badge-secondary">
+                {allSelectedClass[0]?.length}
+              </span>
+
+              {location.pathname === "/student-dashboard" ? (
+                <NavLink to="">Dashboard</NavLink>
+              ) : (
+                <NavLink to="student-dashboard">Dashboard</NavLink>
+              )}
+            </div>
           </li>
         </>
       ) : (

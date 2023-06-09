@@ -3,12 +3,14 @@ import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import useSelectedClasses from "../../hooks/useSelectedClasses";
 
 const ClassCard = (singleClass) => {
   const { user } = useContext(AuthContext);
   const [disabled, setDisabled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const [, refetch] = useSelectedClasses();
   const handleSelectClass = (singleClass) => {
     const { _id, name, image, price } = singleClass;
 
@@ -27,13 +29,14 @@ const ClassCard = (singleClass) => {
           console.log(res.data);
           if (res.data.insertedId) {
             Swal.fire({
-              position: "top-end",
+              position: "center",
               icon: "success",
               title: "Class selected successfully",
               showConfirmButton: false,
               timer: 1500,
             });
             setDisabled(true);
+            refetch();
           }
         })
         .catch((error) => console.log(error));
