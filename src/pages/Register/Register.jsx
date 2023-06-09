@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Register = () => {
   const { signUp, updateUserProfile, logOut } = useContext(AuthContext);
@@ -20,19 +21,31 @@ const Register = () => {
         .then((res) => {
           console.log(res);
           updateUserProfile(data.name, data.photo)
-            .then((res) => {
-              console.log(res);
-              Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "User has been created successfully",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-              setError("");
-              reset();
-              navigate("/login");
-              logOut();
+            .then(() => {
+              const userInfo = {
+                name: data.name,
+                email: data.email,
+                phone: data.phone,
+                role: data.role,
+              };
+              axios
+                .post("http://localhost:5000/users", userInfo)
+                .then((res) => {
+                  if (res.data.insertedId) {
+                    console.log(res);
+                    Swal.fire({
+                      position: "center",
+                      icon: "success",
+                      title: "User has been created successfully",
+                      showConfirmButton: false,
+                      timer: 1500,
+                    });
+                    setError("");
+                    reset();
+                    navigate("/login");
+                    logOut();
+                  }
+                });
             })
             .catch((error) => console.log(error));
         })
@@ -104,6 +117,21 @@ const Register = () => {
                   {...register("email", { required: true })}
                 />
                 {errors.email && (
+                  <span className="text-red-600">This field is required</span>
+                )}
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Phone number</span>
+                </label>
+                <input
+                  type="number"
+                  className="input input-bordered"
+                  placeholder="Your phone number"
+                  {...register("phone", { required: true })}
+                />
+                {errors.phone && (
                   <span className="text-red-600">This field is required</span>
                 )}
               </div>

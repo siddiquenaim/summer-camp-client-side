@@ -1,15 +1,40 @@
 import React from "react";
 import useSelectedClasses from "../../../hooks/useSelectedClasses";
 import { FaTrashAlt } from "react-icons/fa";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const BookedClasses = () => {
-  const [allSelectedClass] = useSelectedClasses();
+  const [allSelectedClass, refetch] = useSelectedClasses();
   const totalPrice = allSelectedClass.reduce(
     (sum, singleClass) => singleClass.price + sum,
     0
   );
   const handleDelete = (singleClass) => {
     console.log(singleClass);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log(singleClass.classId);
+        axios
+          .delete(`http://localhost:5000/delete-a-class/${singleClass._id}`)
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your class has been deleted.", "success");
+              refetch();
+            }
+          })
+          .catch((error) => console.log(error));
+      }
+    });
   };
 
   return (
