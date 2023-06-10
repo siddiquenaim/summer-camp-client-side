@@ -13,8 +13,8 @@ const Navbar = () => {
 
   const allSelectedClass = useSelectedClasses();
 
-  const isStudent = false;
-  const isAdmin = true;
+  const isStudent = true;
+  const isAdmin = false;
   const isInstructor = false;
 
   const navItems = (

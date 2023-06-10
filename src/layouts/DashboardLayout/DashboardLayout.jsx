@@ -2,10 +2,11 @@ import { NavLink, Outlet } from "react-router-dom";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
 import { FaBook, FaBookReader, FaUsers, FaWallet } from "react-icons/fa";
 import { useState } from "react";
+import useAdmin from "../../hooks/useAdmin";
 
 const DashboardLayout = () => {
-  const isStudent = false;
-  const isAdmin = true;
+  const isStudent = true;
+  const [isAdmin] = useAdmin();
   return (
     <div>
       <Navbar></Navbar>
