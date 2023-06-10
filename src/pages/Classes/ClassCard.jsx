@@ -27,7 +27,6 @@ const ClassCard = (singleClass) => {
       axios
         .post("http://localhost:5000/add-selected-class", selectedClass)
         .then((res) => {
-          console.log(res.data);
           if (res.data.insertedId) {
             Swal.fire({
               position: "center",

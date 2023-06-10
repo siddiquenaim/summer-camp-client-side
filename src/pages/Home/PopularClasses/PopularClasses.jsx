@@ -24,8 +24,8 @@ const PopularClasses = () => {
           >
             <div className="card-body">
               <h2 className="card-title">{singleClass?.name}</h2>
-              <p>Instructor: {singleClass?.instructor}</p>
-              <p>Number of students: {singleClass?.numberOfStudents}</p>
+              <p>Instructor: {singleClass?.instructorName}</p>
+              <p>Number of students: {singleClass?.totalStudents}</p>
               <p>Available Seats: {singleClass?.availableSeats}</p>
             </div>
             <figure>
