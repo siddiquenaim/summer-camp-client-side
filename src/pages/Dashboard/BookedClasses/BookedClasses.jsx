@@ -37,16 +37,17 @@ const BookedClasses = () => {
     });
   };
 
+  const handlePay = (singleClass) => {
+    console.log(singleClass);
+  };
+
   return (
     <div>
-      <div className="lg:flex justify-evenly w-full gap-8">
+      <div className="lg:flex justify-between w-full gap-8">
         <h2 className="text-3xl font-bold">
           Total Classes Booked: {allSelectedClass.length}
         </h2>
         <h2 className="text-3xl font-bold">Total Price: {totalPrice}</h2>
-        <button className="btn bg-[black] text-white normal-case">
-          Proceed Payment
-        </button>
       </div>
       <div className="overflow-x-auto">
         <table className="table my-10">
@@ -58,6 +59,7 @@ const BookedClasses = () => {
               <th>Name</th>
               <th className="text-right">Price</th>
               <th className="text-center">Delete Booking</th>
+              <th className="text-center">Enroll</th>
               <th></th>
             </tr>
           </thead>
@@ -87,6 +89,15 @@ const BookedClasses = () => {
                     className="btn btn-ghost bg-red-600  text-white"
                   >
                     <FaTrashAlt></FaTrashAlt>
+                  </p>
+                </td>
+
+                <td className="text-center">
+                  <p
+                    onClick={() => handlePay(singleClass)}
+                    className="btn btn-ghost btn-sm bg-green-600  text-white"
+                  >
+                    Pay now
                   </p>
                 </td>
               </tr>

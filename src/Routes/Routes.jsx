@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "",
+        path: "booked-classes",
         element: (
           <PrivateRoute>
             <BookedClasses></BookedClasses>

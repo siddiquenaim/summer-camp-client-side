@@ -196,7 +196,7 @@ const Register = () => {
                 <input
                   type="text"
                   className="input input-bordered"
-                  defaultValue="student"
+                  defaultValue="Student"
                   {...register("role", { required: true })}
                 />
               </div>

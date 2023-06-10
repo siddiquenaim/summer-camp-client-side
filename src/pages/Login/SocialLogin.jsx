@@ -18,7 +18,7 @@ const SocialLogin = () => {
         const userInfo = {
           name: loggedUser.displayName,
           email: loggedUser.email,
-          role: "student",
+          role: "Student",
         };
         console.log(loggedUser);
         axios.post("http://localhost:5000/users", userInfo).then((res) => {

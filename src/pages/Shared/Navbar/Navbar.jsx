@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import useSelectedClasses from "../../../hooks/useSelectedClasses";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const location = useLocation();
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -13,6 +12,10 @@ const Navbar = () => {
   };
 
   const allSelectedClass = useSelectedClasses();
+
+  const isStudent = false;
+  const isAdmin = true;
+  const isInstructor = false;
 
   const navItems = (
     <>
@@ -32,14 +35,21 @@ const Navbar = () => {
           <li>
             <Link onClick={handleLogOut}>Logout</Link>
           </li>
+          {isStudent && (
+            <li>
+              <div className="indicator">
+                <span className="indicator-item badge badge-secondary">
+                  {allSelectedClass[0]?.length}
+                </span>
+                <NavLink to="/dashboard/booked-classes">Dashboard</NavLink>
+              </div>
+            </li>
+          )}
           <li>
-            <div className="indicator">
-              <span className="indicator-item badge badge-secondary">
-                {allSelectedClass[0]?.length}
-              </span>
-
-              <NavLink to="/dashboard">Dashboard</NavLink>
-            </div>
+            {isInstructor && (
+              <NavLink to="/dashboard/my-classes">Dashboard</NavLink>
+            )}
+            {isAdmin && <NavLink to="/dashboard/all-users">Dashboard</NavLink>}
           </li>
         </>
       ) : (
