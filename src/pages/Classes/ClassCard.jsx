@@ -11,6 +11,7 @@ const ClassCard = (singleClass) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [, refetch] = useSelectedClasses();
+
   const handleSelectClass = (singleClass) => {
     const { _id, name, image, price } = singleClass;
 

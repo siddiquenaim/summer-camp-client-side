@@ -24,6 +24,7 @@ const Register = () => {
             .then(() => {
               const userInfo = {
                 name: data.name,
+                image: data.photo,
                 email: data.email,
                 phone: data.phone,
                 role: data.role,
