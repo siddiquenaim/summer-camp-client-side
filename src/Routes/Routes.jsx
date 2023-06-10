@@ -9,6 +9,9 @@ import DashboardLayout from "../layouts/DashboardLayout/DashboardLayout";
 import PrivateRoute from "./PrivateRoute";
 import BookedClasses from "../pages/Dashboard/BookedClasses/BookedClasses";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import DashboardHome from "../pages/Dashboard/DashboardHome/DashboardHome";
+import AdminRoute from "./AdminRoute";
+import StudentRoute from "./StudentRoute";
 
 export const router = createBrowserRouter([
   {
@@ -47,16 +50,28 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "booked-classes",
+        path: "",
         element: (
           <PrivateRoute>
-            <BookedClasses></BookedClasses>
+            <DashboardHome></DashboardHome>
           </PrivateRoute>
         ),
       },
       {
+        path: "booked-classes",
+        element: (
+          <StudentRoute>
+            <BookedClasses></BookedClasses>
+          </StudentRoute>
+        ),
+      },
+      {
         path: "all-users",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
     ],
   },

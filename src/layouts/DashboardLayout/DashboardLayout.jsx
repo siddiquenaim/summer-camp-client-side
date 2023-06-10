@@ -3,10 +3,13 @@ import Navbar from "../../pages/Shared/Navbar/Navbar";
 import { FaBook, FaBookReader, FaUsers, FaWallet } from "react-icons/fa";
 import { useState } from "react";
 import useAdmin from "../../hooks/useAdmin";
+import useStudent from "../../hooks/useStudent";
+import useInstructor from "../../hooks/useInstructor";
 
 const DashboardLayout = () => {
-  const isStudent = true;
+  const [isStudent] = useStudent();
   const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
   return (
     <div>
       <Navbar></Navbar>
@@ -28,17 +31,18 @@ const DashboardLayout = () => {
             {isStudent && (
               <>
                 <li className="mb-3">
-                  <NavLink to="">
+                  <NavLink to="/dashboard/booked-classes">
                     <FaBookReader></FaBookReader> Booked Classes
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="enrolled-classes">
+                  <NavLink to="/dashboard/enrolled-classes">
                     <FaWallet></FaWallet> Enrolled Classes
                   </NavLink>
                 </li>
               </>
             )}
+
             {isAdmin && (
               <>
                 <li className="mb-3">
@@ -47,8 +51,23 @@ const DashboardLayout = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="enrolled-classes">
-                    <FaBook></FaBook> Pending Classes
+                  <NavLink to="/dashboard/classes-list">
+                    <FaBook></FaBook> Classes list
+                  </NavLink>
+                </li>
+              </>
+            )}
+
+            {isInstructor && (
+              <>
+                <li className="mb-3">
+                  <NavLink to="/dashboard/my-classes">
+                    <FaUsers></FaUsers> My classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/add-a-class">
+                    <FaBook></FaBook> Add a class
                   </NavLink>
                 </li>
               </>

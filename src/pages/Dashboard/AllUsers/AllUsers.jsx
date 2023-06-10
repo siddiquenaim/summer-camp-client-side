@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useState } from "react";
 import { FaChalkboardTeacher, FaShieldAlt, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";

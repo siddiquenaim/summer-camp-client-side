@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
+import Swal from "sweetalert2";
 
 const useAxiosSecure = () => {
   const { logOut } = useAuth();
@@ -28,6 +29,13 @@ const useAxiosSecure = () => {
           (error.response.status === 401 || error.response.status === 403)
         ) {
           await logOut();
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: `${error.response.data.message}`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
           navigate("/login");
         }
         return Promise.reject(error);
