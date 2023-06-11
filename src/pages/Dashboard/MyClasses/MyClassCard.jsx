@@ -35,8 +35,8 @@ const MyClassCard = ({ myClass }) => {
             {status}
           </span>
         </p>
-        <p>Number of students: {totalStudents}</p>
         {feedback ? <p>Feedback: {feedback}</p> : ""}
+        <p>Number of students: {totalStudents}</p>
         <div className="card-actions">
           <button className="btn btn-primary">Update</button>
         </div>

@@ -24,7 +24,7 @@ const InstructorCard = ({ instructor }) => {
               Classes taken:
             </h3>
             <ul className="list-disc ml-6 mb-4">
-              {classNames.map((className, i) => (
+              {classNames?.map((className, i) => (
                 <li key={i} className="text-gray-600">
                   {className}
                 </li>
