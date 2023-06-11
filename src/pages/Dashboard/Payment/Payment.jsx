@@ -9,16 +9,19 @@ const Payment = () => {
   const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
   const [bookedClasses] = useSelectedClasses();
   const selectedClass = bookedClasses.find(
-    (singleClass) => singleClass._id === id
+    (singleClass) => singleClass?._id === id
   );
-  console.log(selectedClass);
+  const price = parseFloat(selectedClass?.price);
 
   return (
     <div>
       <p>This is payment route, paying for: </p>
       <div>
         <Elements stripe={stripePromise}>
-          <CheckoutForm cart={id} price={id}></CheckoutForm>
+          <CheckoutForm
+            selectedClass={selectedClass}
+            price={price}
+          ></CheckoutForm>
         </Elements>
       </div>
     </div>
