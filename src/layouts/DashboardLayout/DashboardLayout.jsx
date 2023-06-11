@@ -1,7 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
 import { FaBook, FaBookReader, FaUsers, FaWallet } from "react-icons/fa";
-import { useState } from "react";
 import useAdmin from "../../hooks/useAdmin";
 import useStudent from "../../hooks/useStudent";
 import useInstructor from "../../hooks/useInstructor";
@@ -51,8 +50,8 @@ const DashboardLayout = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/dashboard/classes-list">
-                    <FaBook></FaBook> Classes list
+                  <NavLink to="/dashboard/manage-classes">
+                    <FaBook></FaBook> Manage Classes
                   </NavLink>
                 </li>
               </>

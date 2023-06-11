@@ -7,7 +7,7 @@ const Classes = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/all-classes")
+      .get("http://localhost:5000/all-approved-classes")
       .then((res) => setClasses(res.data))
       .catch((err) => console.error(err));
   });
