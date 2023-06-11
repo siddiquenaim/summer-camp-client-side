@@ -17,6 +17,8 @@ import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 import Feedback from "../pages/Dashboard/ManageClasses/Feedback";
+import EnrolledClasses from "../pages/Dashboard/EnrolledClasses/EnrolledClasses";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -67,6 +69,22 @@ export const router = createBrowserRouter([
         element: (
           <StudentRoute>
             <BookedClasses></BookedClasses>
+          </StudentRoute>
+        ),
+      },
+      {
+        path: "enrolled-classes",
+        element: (
+          <StudentRoute>
+            <EnrolledClasses></EnrolledClasses>
+          </StudentRoute>
+        ),
+      },
+      {
+        path: "payment/:id",
+        element: (
+          <StudentRoute>
+            <Payment></Payment>
           </StudentRoute>
         ),
       },

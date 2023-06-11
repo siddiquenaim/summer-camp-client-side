@@ -3,6 +3,7 @@ import useSelectedClasses from "../../../hooks/useSelectedClasses";
 import { FaTrashAlt } from "react-icons/fa";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const BookedClasses = () => {
   const [allSelectedClass, refetch] = useSelectedClasses();
@@ -35,10 +36,6 @@ const BookedClasses = () => {
           .catch((error) => console.log(error));
       }
     });
-  };
-
-  const handlePay = (singleClass) => {
-    console.log(singleClass);
   };
 
   return (
@@ -93,12 +90,11 @@ const BookedClasses = () => {
                 </td>
 
                 <td className="text-center">
-                  <p
-                    onClick={() => handlePay(singleClass)}
-                    className="btn btn-ghost btn-sm bg-green-600  text-white"
-                  >
-                    Pay now
-                  </p>
+                  <Link to={`/dashboard/payment/${singleClass._id}`}>
+                    <p className="btn btn-ghost btn-sm bg-green-600  text-white">
+                      Pay now
+                    </p>
+                  </Link>
                 </td>
               </tr>
             ))}
