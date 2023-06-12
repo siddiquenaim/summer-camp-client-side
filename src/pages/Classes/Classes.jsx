@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ClassCard from "./ClassCard";
+import { Typewriter } from "react-simple-typewriter";
 
 const Classes = () => {
   const [classes, setClasses] = useState([]);
@@ -12,13 +13,21 @@ const Classes = () => {
       )
       .then((res) => setClasses(res.data))
       .catch((err) => console.error(err));
-  });
+  }, []);
 
   return (
     <div className="w-[95%] md:w-[90%] mx-auto my-20">
-      <h2 className="text-5xl text-center font-bold mb-10">
-        All the classes! {classes.length}
-      </h2>
+      <div className="text-5xl text-center mb-10">
+        <Typewriter
+          words={["All Classes"]}
+          loop={1}
+          cursor
+          cursorStyle="_"
+          typeSpeed={100}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
         {classes.map((singleClass) => (
           <ClassCard

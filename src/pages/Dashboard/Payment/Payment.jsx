@@ -15,7 +15,7 @@ const Payment = () => {
 
   return (
     <div>
-      <p>This is payment route, paying for: </p>
+      <h3 className="mt-10 text-3xl">Complete your payment</h3>
       <div>
         <Elements stripe={stripePromise}>
           <CheckoutForm

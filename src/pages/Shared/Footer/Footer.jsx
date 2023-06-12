@@ -16,7 +16,7 @@ const Footer = () => {
           </p>
           <small>A guide in your musical journey</small>
           <p>Uttara, Dhaka-1230, Bangladesh</p>
-
+          <p>Phone: +8801984344636</p> <p>Email: siddiquenaim26@gmail.com</p>
           <p>Copyright © 2023 - All right reserved</p>
         </div>
         <div>

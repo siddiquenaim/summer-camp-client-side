@@ -2,7 +2,15 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const PendingCard = ({ singlePendingClass, refetch }) => {
-  const { _id, name, image } = singlePendingClass;
+  const {
+    name,
+    image,
+    instructorName,
+    instructorEmail,
+    availableSeats,
+    price,
+    status,
+  } = singlePendingClass;
 
   const handleApproveClass = (_id) => {
     Swal.fire({
@@ -72,8 +80,22 @@ const PendingCard = ({ singlePendingClass, refetch }) => {
         <img className="h-[240px] w-[360px]" src={image} alt="Movie" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
-        <p>Click the button to watch on Jetflix app.</p>
+        <h2 className="font-bold text-xl text-center underline">{name}</h2>
+        <p>
+          <span className="font-bold">Instructor Name:</span> {instructorName}
+        </p>
+        <p>
+          <span className="font-bold">Instructor Email:</span> {instructorEmail}
+        </p>
+        <p>
+          <span className="font-bold">Available Seats:</span> {availableSeats}
+        </p>
+        <p>
+          <span className="font-bold">Price:</span> {price}
+        </p>
+        <p>
+          <span className="font-bold">Status:</span> {status}
+        </p>
         <div className="justify-end flex flex-row gap-2">
           <button
             onClick={() => handleApproveClass(_id)}

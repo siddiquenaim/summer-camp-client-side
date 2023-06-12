@@ -21,7 +21,7 @@ const PaymentHistory = () => {
     <div className="mb-20">
       <h3 className="mt-10 text-3xl">Your payment history</h3>
       <div>
-        <table className="table my-10 mx-10">
+        <table className="table my-10">
           {/* head */}
           <thead>
             <tr>

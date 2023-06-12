@@ -97,6 +97,7 @@ const CheckoutForm = ({ price, selectedClass }) => {
     <>
       <form onSubmit={handleSubmit}>
         <CardElement
+          className="border border-black w-[80%] mx-auto my-10 px-4 py-2"
           options={{
             style: {
               base: {
@@ -113,7 +114,7 @@ const CheckoutForm = ({ price, selectedClass }) => {
           }}
         />
         <button
-          className="bg-violet-800"
+          className="btn text-white bg-[#6E479E] hover:bg-[#1E0935]"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >
