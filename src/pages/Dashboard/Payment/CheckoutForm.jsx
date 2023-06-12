@@ -84,7 +84,18 @@ const CheckoutForm = ({ price, selectedClass }) => {
             .patch(`/update-card/${selectedClass.classId}`)
             .then((res) => {
               console.log(res.data);
-              navigate("/");
+              if (res.data.modifiedCount > 0) {
+                // const enrolledClass = {
+                //   enrolledID: selectedClass?.classId,
+                //   email: user?.email,
+                //   date: new Date(),
+                //   transactionId: paymentIntent.id,
+                // }
+                // axios.post("https://b7a12-summer-camp-server-side-siddiquenaim-siddiquenaim.vercel.app/enrolled", enrolledClass).then((res) => {
+                //   console.log(res.data);
+                // });
+                navigate("/");
+              }
             });
         }
       });

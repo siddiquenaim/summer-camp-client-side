@@ -6,7 +6,9 @@ const InstructorCard = ({ instructor }) => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    axios(`http://localhost:5000/classes/instructor/${email}`).then((res) => {
+    axios(
+      `https://b7a12-summer-camp-server-side-siddiquenaim-siddiquenaim.vercel.app/classes/instructor/${email}`
+    ).then((res) => {
       console.log(res.data);
       setClasses(res.data);
     });
