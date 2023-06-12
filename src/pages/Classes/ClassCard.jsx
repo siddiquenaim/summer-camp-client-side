@@ -65,7 +65,7 @@ const ClassCard = (singleClass) => {
         <img
           src={singleClass.singleClass.image}
           alt="Shoes"
-          className="rounded-xl"
+          className="rounded-xl h-[225px] w-[300px]"
         />
       </figure>
       <div className="card-body items-center text-center">

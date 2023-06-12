@@ -1,14 +1,43 @@
+import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
+
+import "aos/dist/aos.css";
+
 const Banner = () => {
   return (
-    <div className="md:flex  w-[95%] md:w-[90%] mx-auto mt-20">
+    <div className="md:flex text-center md:text-left w-[90%] mx-auto mt-20 mb-10">
       <div className="md:w-[50%] flex justify-center items-center">
-        <div>
-          <h2 className="text-5xl">Start your musical journey today</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-            blanditiis itaque deleniti nesciunt, ab dolorum quidem molestias
-            laudantium culpa commodi.
+        <div className="md:w-[80%]">
+          <div
+            className="text-5xl"
+            data-aos="flip-right"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1500"
+          >
+            <Typewriter
+              words={["Welcome to Melodica!"]}
+              loop={1}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </div>
+          <br />
+          <p className="my-5 text-[#333333]">
+            Embark on a musical journey like never before. <br /> <br />
+            Explore our expert-led classes, unlock your creative potential, and
+            master the art of music. Whether you're a beginner or a seasoned
+            musician, we're here to inspire and guide you every step of the way.
+            Get ready to unleash your musical passion and create harmonious
+            melodies that resonate with the world.
           </p>
+          <Link to="/classes">
+            <button className="btn text-white bg-[#6E479E] hover:bg-[#1E0935]">
+              Start Now
+            </button>
+          </Link>
         </div>
       </div>
       <div className="md:w-[50%]">

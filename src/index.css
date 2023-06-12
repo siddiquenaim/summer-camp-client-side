@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: "Geologica", sans-serif;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lexend", sans-serif;
 }
 
 .drawer-side a.active {

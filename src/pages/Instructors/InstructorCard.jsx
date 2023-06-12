@@ -4,15 +4,24 @@ import React, { useEffect, useState } from "react";
 const InstructorCard = ({ instructor }) => {
   const { name, email, image } = instructor;
   const [classes, setClasses] = useState([]);
+  const [totalStudents, setTotalStudents] = useState(0);
 
   useEffect(() => {
     axios(
       `https://b7a12-summer-camp-server-side-siddiquenaim-siddiquenaim.vercel.app/classes/instructor/${email}`
     ).then((res) => {
-      console.log(res.data);
       setClasses(res.data);
+      calculateTotalStudents(res.data);
     });
   }, [email]);
+
+  const calculateTotalStudents = (classes) => {
+    let total = 0;
+    classes.forEach((singleClass) => {
+      total += singleClass.totalStudents;
+    });
+    setTotalStudents(total);
+  };
 
   return (
     <div className="bg-white rounded-lg border p-8 flex flex-col md:flex-row md:items-center">
@@ -31,24 +40,24 @@ const InstructorCard = ({ instructor }) => {
             Number of classes taken:{" "}
             <span className="font-semibold">{classes.length}</span>
           </p>
-          <div>
-            <h3 className="text-lg font-semibold text-gray-800">
-              Classes taken:
-            </h3>
-            <ul className="list-disc ml-6 mb-4">
-              {classes?.map((singleClass, i) => (
-                <li key={i} className="text-gray-600">
-                  {singleClass.name}
-                </li>
-              ))}
-            </ul>
-            <a
-              href="/classes"
-              className="block w-1/2 bg-purple-700 text-white text-center py-2 rounded-lg font-semibold hover:bg-purple-800 transition-colors duration-300"
-            >
-              See Classes
-            </a>
-          </div>
+          <p className="text-gray-600 mb-4">
+            Total number of students:{" "}
+            <span className="font-semibold">{totalStudents}</span>
+          </p>
+          {classes.length > 0 && (
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800">
+                Classes taken:
+              </h3>
+              <ul className="list-disc ml-6 mb-4">
+                {classes?.map((singleClass, i) => (
+                  <li key={i} className="text-gray-600">
+                    {singleClass.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>

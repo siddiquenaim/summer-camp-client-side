@@ -15,7 +15,12 @@ const PopularClasses = () => {
   });
   return (
     <div className="w-[95%] md:w-[90%] mx-auto my-20">
-      <h2 className="text-5xl text-center font-bold mb-10">
+      <h2
+        className="text-5xl text-center font-bold mb-20"
+        data-aos="fade-down"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
+      >
         Our Popular Classes!
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -24,15 +29,22 @@ const PopularClasses = () => {
             key={singleClass?._id}
             className="card w-full shadow-xl border bg-[#6e479e3c]"
           >
-            <div className="card-body">
-              <h2 className="card-title">{singleClass?.name}</h2>
+            <div
+              className="card-body text-center"
+              data-aos="zoom-in"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+            >
+              <h2 className="text-center text-xl font-bold">
+                {singleClass?.name}
+              </h2>
               <p>Instructor: {singleClass?.instructorName}</p>
               <p>Number of students: {singleClass?.totalStudents}</p>
               <p>Available Seats: {singleClass?.availableSeats}</p>
             </div>
             <figure>
               <img
-                className="h-[400px] w-[360px]"
+                className="h-[225px] w-[300px]"
                 src={singleClass?.image}
                 alt="Shoes"
               />
