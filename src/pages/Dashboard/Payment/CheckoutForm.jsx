@@ -18,7 +18,7 @@ const CheckoutForm = ({ price, selectedClass }) => {
   const [transactionId, setTransactionId] = useState("");
   const navigate = useNavigate();
 
-  console.log(selectedClass.classId);
+  // console.log(selectedClass.classId);
 
   useEffect(() => {
     axiosSecure.post("/create-payment-intent", { price }).then((res) => {
@@ -62,7 +62,7 @@ const CheckoutForm = ({ price, selectedClass }) => {
     if (confirmError) {
       setCardError(confirmError.message);
     }
-    console.log(paymentIntent);
+    // console.log(paymentIntent);
 
     setProcessing(false);
     if (paymentIntent.status === "succeeded") {
@@ -83,7 +83,7 @@ const CheckoutForm = ({ price, selectedClass }) => {
           axiosSecure
             .patch(`/update-card/${selectedClass.classId}`)
             .then((res) => {
-              console.log(res.data);
+              // console.log(res.data);
               if (res.data.modifiedCount > 0) {
                 navigate("/");
               }

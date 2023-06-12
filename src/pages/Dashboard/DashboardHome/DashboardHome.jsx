@@ -5,7 +5,7 @@ import { JackInTheBox } from "react-awesome-reveal";
 const DashboardHome = () => {
   const { user } = useAuth();
 
-  console.log(user);
+  // console.log(user);
 
   return (
     <div className="mx-auto w-[90%] flex justify-center items-center">

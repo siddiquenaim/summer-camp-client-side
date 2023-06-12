@@ -23,7 +23,7 @@ const UpdateClass = () => {
       availableSeats,
     };
 
-    console.log(classInfo);
+    // console.log(classInfo);
 
     axios
       .patch(
@@ -31,7 +31,7 @@ const UpdateClass = () => {
         classInfo
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.modifiedCount > 0) {
           Swal.fire({
             position: "center",

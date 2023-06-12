@@ -9,14 +9,14 @@ const Feedback = () => {
   const navigate = useNavigate();
 
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
   useEffect(() => {
     axios
       .get(
         `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/classes/${id}`
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setDeniedClass(res.data);
       })
       .catch((error) => console.log(error));
@@ -26,7 +26,7 @@ const Feedback = () => {
     event.preventDefault();
     const form = event.target;
     const message = form.message.value;
-    console.log(message);
+    // console.log(message);
     axios
       .patch(
         `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/feedback/${id}`,

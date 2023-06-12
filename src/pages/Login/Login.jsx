@@ -19,7 +19,7 @@ const Login = () => {
   const onSubmit = (data) => {
     signIn(data.email, data.password)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         navigate(from, { replace: true });
         Swal.fire({
           position: "center",

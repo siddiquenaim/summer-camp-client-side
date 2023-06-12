@@ -4,7 +4,7 @@ import MyClassCard from "./MyClassCard";
 
 const MyClasses = () => {
   const [myClasses, refetch] = useMyClasses();
-  console.log(myClasses);
+  // console.log(myClasses);
   return (
     <div className="w-[90%] mx-auto p-10">
       <h2 className="mt-10 text-3xl text-center">

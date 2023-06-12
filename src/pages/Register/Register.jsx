@@ -19,7 +19,7 @@ const Register = () => {
     if (data.password === data.confirmPassword) {
       signUp(data.email, data.password)
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           updateUserProfile(data.name, data.photo)
             .then(() => {
               const userInfo = {
@@ -36,7 +36,7 @@ const Register = () => {
                 )
                 .then((res) => {
                   if (res.data.insertedId) {
-                    console.log(res);
+                    // console.log(res);
                     Swal.fire({
                       position: "center",
                       icon: "success",

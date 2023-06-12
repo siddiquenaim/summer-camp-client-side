@@ -50,7 +50,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedInUser) => {
       setUser(loggedInUser);
-      console.log(loggedInUser);
+      // console.log(loggedInUser);
 
       // get and set token
       if (loggedInUser) {
@@ -60,7 +60,7 @@ const AuthProvider = ({ children }) => {
             { email: loggedInUser.email }
           )
           .then((res) => {
-            console.log(res.data.token);
+            // console.log(res.data.token);
             localStorage.setItem("access-token", res.data.token);
             setLoading(false);
           });

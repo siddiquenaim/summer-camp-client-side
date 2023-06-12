@@ -5,7 +5,7 @@ import useStudent from "../hooks/useStudent";
 const StudentRoute = ({ children }) => {
   const location = useLocation();
   const [isStudent, isStudentLoading] = useStudent();
-  console.log(isStudent);
+  // console.log(isStudent);
   const { user, loading } = useAuth();
   if (loading || isStudentLoading) {
     return (

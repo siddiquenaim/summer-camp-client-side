@@ -21,7 +21,7 @@ const SocialLogin = () => {
           image: loggedUser.photoURL,
           role: "Student",
         };
-        console.log(loggedUser);
+        // console.log(loggedUser);
         axios
           .post(
             "https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/users",

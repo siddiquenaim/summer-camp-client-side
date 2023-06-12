@@ -25,9 +25,7 @@ const ManageClasses = () => {
 
   return (
     <div>
-      <h1 className="text-3xl text-center my-10">
-        All the classes are here: pending, approved and denied
-      </h1>
+      <h1 className="text-3xl text-center my-10">Manage All Classes</h1>
       <div className="p-10">
         <Tabs>
           <TabList>

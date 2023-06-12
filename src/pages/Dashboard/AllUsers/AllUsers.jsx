@@ -110,7 +110,7 @@ const AllUsers = () => {
 
   return (
     <div className="mb-20">
-      <h1>All the broskis are here! {users.length}</h1>
+      <h1 className="text-3xl text-center my-10">Manage All Users</h1>
       <div className="overflow-x-auto">
         <table className="table my-10">
           {/* head */}

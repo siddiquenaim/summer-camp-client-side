@@ -5,7 +5,7 @@ import useInstructor from "../hooks/useInstructor";
 const InstructorRoute = ({ children }) => {
   const location = useLocation();
   const [isInstructor, isInstructorLoading] = useInstructor();
-  console.log(isInstructor);
+  // console.log(isInstructor);
   const { user, loading } = useAuth();
   if (loading || isInstructorLoading) {
     return (

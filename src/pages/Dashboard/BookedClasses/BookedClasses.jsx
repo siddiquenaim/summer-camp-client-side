@@ -12,7 +12,7 @@ const BookedClasses = () => {
     0
   );
   const handleDelete = (singleClass) => {
-    console.log(singleClass);
+    // console.log(singleClass);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -23,13 +23,13 @@ const BookedClasses = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log(singleClass.classId);
+        // console.log(singleClass.classId);
         axios
           .delete(
             `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/delete-a-class/${singleClass._id}`
           )
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             if (res.data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your class has been deleted.", "success");
               refetch();
