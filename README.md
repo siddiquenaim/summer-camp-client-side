@@ -1,7 +1,5 @@
 # Summer Camp Learning School (Melodica)
 
-![Melodica Logo](https://static.vecteezy.com/system/resources/previews/014/390/592/original/white-acoustic-guitar-3d-rendering-icon-on-transparent-background-png.png)
-
 Summer Camp Learning School, also known as Melodica, is a music instrument learning school. The website is built using Vite, React, React Router, Node.js, Express.js, Firebase, MongoDB, Tailwind CSS, DaisyUI, Stripe, and various React packages. It is deployed on Firebase and offers a comprehensive platform for individuals interested in learning music instruments.
 
 ## Live Site

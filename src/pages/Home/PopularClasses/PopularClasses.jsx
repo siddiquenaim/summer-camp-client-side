@@ -38,9 +38,16 @@ const PopularClasses = () => {
               <h2 className="text-center text-xl font-bold">
                 {singleClass?.name}
               </h2>
-              <p>Instructor: {singleClass?.instructorName}</p>
-              <p>Number of students: {singleClass?.totalStudents}</p>
-              <p>Available Seats: {singleClass?.availableSeats}</p>
+              <p>
+                <span className="font-bold">Instructor: </span>
+                {singleClass?.instructorName}
+              </p>
+              <p className="font-bold">
+                Number of students: {singleClass?.totalStudents}
+              </p>
+              <p className="font-bold">
+                Available Seats: {singleClass?.availableSeats}
+              </p>
             </div>
             <figure>
               <img
