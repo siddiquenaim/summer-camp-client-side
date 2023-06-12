@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
 import "aos/dist/aos.css";
+import { Fade } from "react-awesome-reveal";
 
 const Banner = () => {
   return (
@@ -25,14 +26,16 @@ const Banner = () => {
             />
           </div>
           <br />
-          <p className="my-5 text-[#333333]">
-            Embark on a musical journey like never before. <br /> <br />
-            Explore our expert-led classes, unlock your creative potential, and
-            master the art of music. Whether you're a beginner or a seasoned
-            musician, we're here to inspire and guide you every step of the way.
-            Get ready to unleash your musical passion and create harmonious
-            melodies that resonate with the world.
-          </p>
+          <Fade>
+            <p className="my-5 text-[#333333]">
+              Embark on a musical journey like never before. <br /> <br />
+              Explore our expert-led classes, unlock your creative potential,
+              and master the art of music. Whether you're a beginner or a
+              seasoned musician, we're here to inspire and guide you every step
+              of the way. Get ready to unleash your musical passion and create
+              harmonious melodies that resonate with the world.
+            </p>
+          </Fade>
           <Link to="/classes">
             <button className="btn text-white bg-[#6E479E] hover:bg-[#1E0935]">
               Start Now
@@ -41,13 +44,15 @@ const Banner = () => {
         </div>
       </div>
       <div className="md:w-[50%]">
-        <lottie-player
-          src="https://assets8.lottiefiles.com/private_files/lf30_xnjjfyjt.json"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-        ></lottie-player>
+        <Fade>
+          <lottie-player
+            src="https://assets8.lottiefiles.com/private_files/lf30_xnjjfyjt.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          ></lottie-player>
+        </Fade>
       </div>
     </div>
   );

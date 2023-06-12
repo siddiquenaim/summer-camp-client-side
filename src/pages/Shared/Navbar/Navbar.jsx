@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
-import useSelectedClasses from "../../../hooks/useSelectedClasses";
 import "./Navbar.css";
+import { FaLightbulb } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -12,6 +12,23 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
 
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
   const navItems = (
     <>
       <li>
@@ -116,6 +133,21 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-3"> {navItems}</ul>
+          <div className="flex-none">
+            {/* Toggle button here */}
+            <button className="btn btn-square btn-ghost">
+              <label className="swap swap-rotate w-12 h-12">
+                <input
+                  type="checkbox"
+                  onChange={handleToggle}
+                  // show toggle image based on localstorage theme
+                  checked={theme === "light" ? false : true}
+                />
+
+                <FaLightbulb></FaLightbulb>
+              </label>
+            </button>
+          </div>
         </div>
         <div className="navbar-end">
           {user && (
