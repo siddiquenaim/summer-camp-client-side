@@ -51,7 +51,6 @@ const Slider = () => {
           <p className="my-4">.</p>
           <SwiperSlide>
             <img className="rounded-lg" src={slide4} alt="" />
-
             <h3 className="text-4xl  text-center mt-10 text-black">Violin</h3>
           </SwiperSlide>
         </Swiper>

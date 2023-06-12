@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -10,6 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const [show, setShow] = useState(false);
   const {
     register,
     handleSubmit,
@@ -30,6 +31,11 @@ const Login = () => {
       })
       .catch((error) => console.log(error));
   };
+
+  const handleShowPassword = () => {
+    setShow(!show);
+  };
+
   return (
     <div className="bg-white my-20">
       <div>
@@ -68,7 +74,7 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="password"
+                  type={`${show ? "text" : "password"}`}
                   className="input input-bordered"
                   placeholder="Your Password"
                   {...register("password", { required: true })}
@@ -76,6 +82,9 @@ const Login = () => {
                 {errors.password && (
                   <span className="text-red-600">This field is required</span>
                 )}
+                <small onClick={handleShowPassword}>
+                  {show ? "Hide Password" : "Show Password"}
+                </small>
               </div>
               <div className="form-control mt-6">
                 <input

@@ -5,11 +5,13 @@ import useAdmin from "../../hooks/useAdmin";
 import useStudent from "../../hooks/useStudent";
 import useInstructor from "../../hooks/useInstructor";
 import Footer from "../../pages/Shared/Footer/Footer";
+import useAuth from "../../hooks/useAuth";
 
 const DashboardLayout = () => {
   const [isStudent] = useStudent();
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
+  const { user } = useAuth();
   return (
     <div>
       <Navbar></Navbar>
@@ -30,14 +32,19 @@ const DashboardLayout = () => {
             {/* Sidebar content here */}
             {isStudent && (
               <>
-                <li className="mb-3">
+                <li>
                   <NavLink to="/dashboard/booked-classes">
                     <FaBookReader></FaBookReader> Booked Classes
                   </NavLink>
                 </li>
-                <li>
+                <li className="my-4">
                   <NavLink to="/dashboard/enrolled-classes">
                     <FaWallet></FaWallet> Enrolled Classes
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/dashboard/payment-history">
+                    <FaWallet></FaWallet> Payment History
                   </NavLink>
                 </li>
               </>
@@ -71,6 +78,17 @@ const DashboardLayout = () => {
                   </NavLink>
                 </li>
               </>
+            )}
+            <div className="divider"></div>
+            {user?.photoURL && (
+              <div className="flex items-center gap-6">
+                <div className="avatar">
+                  <div className="w-12 rounded-full hover:ring cursor-pointer ring-primary ring-offset-base-100 ring-offset-2">
+                    <img src={user?.photoURL} />
+                  </div>
+                </div>
+                <div className="font-semibold">{user?.displayName}</div>
+              </div>
             )}
           </ul>
         </div>

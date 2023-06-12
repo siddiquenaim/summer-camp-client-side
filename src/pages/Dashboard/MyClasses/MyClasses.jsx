@@ -8,7 +8,7 @@ const MyClasses = () => {
   return (
     <div className="w-[90%] mx-auto p-10">
       <h2 className="mt-10 text-3xl text-center">
-        All the classes I added are here: {myClasses.length}
+        All the classes you added are here
       </h2>
       <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-5">
         {myClasses.map((myClass) => (

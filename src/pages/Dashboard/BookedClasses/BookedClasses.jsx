@@ -41,7 +41,7 @@ const BookedClasses = () => {
   };
 
   return (
-    <div>
+    <div className="mb-20">
       <div className="lg:flex justify-center w-full gap-8">
         <h2 className="text-3xl">
           Total Classes Booked: {allSelectedClass.length}

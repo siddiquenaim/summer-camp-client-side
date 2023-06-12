@@ -109,7 +109,7 @@ const AllUsers = () => {
   };
 
   return (
-    <div>
+    <div className="mb-20">
       <h1>All the broskis are here! {users.length}</h1>
       <div className="overflow-x-auto">
         <table className="table my-10">

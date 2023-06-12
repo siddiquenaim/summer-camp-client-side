@@ -1,5 +1,6 @@
 import { Typewriter } from "react-simple-typewriter";
 import useAuth from "../../../hooks/useAuth";
+import { JackInTheBox } from "react-awesome-reveal";
 
 const DashboardHome = () => {
   const { user } = useAuth();
@@ -22,14 +23,17 @@ const DashboardHome = () => {
         </h1>
 
         <div>
-          <lottie-player
-            src="https://assets10.lottiefiles.com/packages/lf20_1pxqjqps.json"
-            background="transparent"
-            speed="1"
-            style={{ width: "400px", height: "400px" }}
-            loop
-            autoplay
-          ></lottie-player>
+          <JackInTheBox>
+            {" "}
+            <lottie-player
+              src="https://assets10.lottiefiles.com/packages/lf20_1pxqjqps.json"
+              background="transparent"
+              speed="1"
+              style={{ width: "400px", height: "400px" }}
+              loop
+              autoplay
+            ></lottie-player>
+          </JackInTheBox>
         </div>
       </div>
     </div>

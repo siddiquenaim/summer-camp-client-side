@@ -26,7 +26,10 @@ const UpdateClass = () => {
     console.log(classInfo);
 
     axios
-      .patch(`http://localhost:5000/update-a-class/${id}`, classInfo)
+      .patch(
+        `https://b7a12-summer-camp-server-side-siddiquenaim-siddiquenaim.vercel.app/update-a-class/${id}`,
+        classInfo
+      )
       .then((res) => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {
