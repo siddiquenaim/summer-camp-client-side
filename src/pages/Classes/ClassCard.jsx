@@ -71,9 +71,15 @@ const ClassCard = ({ singleClass }) => {
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{name}</h2>
-        <p>Instructor: {instructorName}</p>
-        <p>Price: {price}</p>
-        <p>Available Seats: {availableSeats}</p>
+        <p>
+          <span className="font-bold">Instructor:</span> {instructorName}
+        </p>
+        <p>
+          <span className="font-bold">Price:</span> {price}
+        </p>
+        <p>
+          <span className="font-bold">Available Seats:</span> {availableSeats}
+        </p>
         <div className="card-actions">
           {availableSeats !== 0 ? (
             <button

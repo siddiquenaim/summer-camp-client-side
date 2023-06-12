@@ -30,17 +30,21 @@ const InstructorCard = ({ instructor }) => {
           <img src={image} className="h-[400px] w-[350px]" alt="Album" />
         </figure>
         <div className="card-body lg:mr-20">
-          <h2 className="card-title">{name}</h2>
-          <p>Email: {email}</p>
+          <h2 className="card-title text-xl mb-3">{name}</h2>
           <p>
-            Number of classes taken:{" "}
-            <span className="font-semibold">{classes.length}</span>
+            <span className="font-bold"> Number of classes taken:</span>{" "}
+            <span>{classes.length}</span>
           </p>
-          <p>Number of students: {totalStudents}</p>
-          <p>Email: {email}</p>
+          <p>
+            <span className="font-bold">Number of students: </span>
+            {totalStudents}
+          </p>
+          <p>
+            <span className="font-bold">Email:</span> {email}
+          </p>
           {classes.length > 0 && (
             <div>
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 className="text-lg font-bold text-gray-800">
                 Classes taken:
               </h3>
               <ul className="list-disc ml-6 mb-4">
