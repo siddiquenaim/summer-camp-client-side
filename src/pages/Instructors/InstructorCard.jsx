@@ -1,7 +1,17 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const InstructorCard = ({ instructor }) => {
-  const { name, email, classes, image, classNames } = instructor;
+  const { name, email, image } = instructor;
+  const [classes, setClasses] = useState([]);
+
+  useEffect(() => {
+    axios(`http://localhost:5000/classes/instructor/${email}`).then((res) => {
+      console.log(res.data);
+      setClasses(res.data);
+    });
+  }, [email]);
+
   return (
     <div className="bg-white rounded-lg border p-8 flex flex-col md:flex-row md:items-center">
       <div className="flex items-center justify-center md:w-1/2">
@@ -17,16 +27,16 @@ const InstructorCard = ({ instructor }) => {
           <p className="text-gray-600 mb-2">{email}</p>
           <p className="text-gray-600 mb-4">
             Number of classes taken:{" "}
-            <span className="font-semibold">{classes}</span>
+            <span className="font-semibold">{classes.length}</span>
           </p>
           <div>
             <h3 className="text-lg font-semibold text-gray-800">
               Classes taken:
             </h3>
             <ul className="list-disc ml-6 mb-4">
-              {classNames?.map((className, i) => (
+              {classes?.map((singleClass, i) => (
                 <li key={i} className="text-gray-600">
-                  {className}
+                  {singleClass.name}
                 </li>
               ))}
             </ul>
