@@ -25,7 +25,10 @@ const ClassCard = (singleClass) => {
       };
 
       axios
-        .post("http://localhost:5000/add-selected-class", selectedClass)
+        .post(
+          "https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/add-selected-class",
+          selectedClass
+        )
         .then((res) => {
           if (res.data.insertedId) {
             Swal.fire({

@@ -12,7 +12,9 @@ const Feedback = () => {
   console.log(id);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/classes/${id}`)
+      .get(
+        `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/classes/${id}`
+      )
       .then((res) => {
         console.log(res.data);
         setDeniedClass(res.data);
@@ -26,7 +28,10 @@ const Feedback = () => {
     const message = form.message.value;
     console.log(message);
     axios
-      .patch(`http://localhost:5000/feedback/${id}`, { feedback: message })
+      .patch(
+        `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/feedback/${id}`,
+        { feedback: message }
+      )
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           Swal.fire(

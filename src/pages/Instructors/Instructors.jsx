@@ -7,7 +7,9 @@ const Instructors = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/all-instructors")
+      .get(
+        "https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/all-instructors"
+      )
       .then((res) => setAllInstructors(res.data))
       .catch((error) => console.log(error));
   }, []);

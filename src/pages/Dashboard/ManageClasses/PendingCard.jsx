@@ -16,7 +16,9 @@ const PendingCard = ({ singlePendingClass, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .patch(`http://localhost:5000/approve-class/${_id}`)
+          .patch(
+            `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/approve-class/${_id}`
+          )
           .then((res) => {
             if (res.data.modifiedCount) {
               Swal.fire({
@@ -44,18 +46,22 @@ const PendingCard = ({ singlePendingClass, refetch }) => {
       confirmButtonText: "Yes, deny it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.patch(`http://localhost:5000/deny-class/${_id}`).then((res) => {
-          if (res.data.modifiedCount) {
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: `${name} is denied!`,
-              showConfirmButton: false,
-              timer: 1500,
-            });
-            refetch();
-          }
-        });
+        axios
+          .patch(
+            `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/deny-class/${_id}`
+          )
+          .then((res) => {
+            if (res.data.modifiedCount) {
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: `${name} is denied!`,
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              refetch();
+            }
+          });
       }
     });
   };

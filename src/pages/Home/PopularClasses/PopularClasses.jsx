@@ -5,7 +5,9 @@ const PopularClasses = () => {
   const [popularClasses, setPopularClasses] = useState();
   useEffect(() => {
     axios
-      .get("http://localhost:5000/popular-classes")
+      .get(
+        "https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/popular-classes"
+      )
       .then((res) => setPopularClasses(res.data))
       .catch((error) =>
         console.error("Error fetching popular classes:", error)

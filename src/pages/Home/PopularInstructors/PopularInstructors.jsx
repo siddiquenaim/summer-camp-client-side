@@ -6,7 +6,9 @@ const PopularInstructors = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/popular-instructors")
+      .get(
+        "https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/popular-instructors"
+      )
       .then((res) => setPopularInstructors(res.data))
       .catch((error) => {
         console.error("Error fetching popular instructors:", error);

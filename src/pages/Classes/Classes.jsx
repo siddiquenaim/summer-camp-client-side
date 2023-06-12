@@ -7,10 +7,13 @@ const Classes = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/all-approved-classes")
+      .get(
+        "https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/all-approved-classes"
+      )
       .then((res) => setClasses(res.data))
       .catch((err) => console.error(err));
   });
+
   return (
     <div className="w-[95%] md:w-[90%] mx-auto my-20">
       <h2 className="text-5xl text-center font-bold mb-10">

@@ -22,11 +22,16 @@ const SocialLogin = () => {
           role: "Student",
         };
         console.log(loggedUser);
-        axios.post("http://localhost:5000/users", userInfo).then((res) => {
-          if (res.data.insertedId) {
-            console.log(res);
-          }
-        });
+        axios
+          .post(
+            "https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/users",
+            userInfo
+          )
+          .then((res) => {
+            if (res.data.insertedId) {
+              console.log(res);
+            }
+          });
         navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));

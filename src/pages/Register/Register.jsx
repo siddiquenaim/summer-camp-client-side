@@ -30,7 +30,10 @@ const Register = () => {
                 role: data.role,
               };
               axios
-                .post("http://localhost:5000/users", userInfo)
+                .post(
+                  "https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/users",
+                  userInfo
+                )
                 .then((res) => {
                   if (res.data.insertedId) {
                     console.log(res);

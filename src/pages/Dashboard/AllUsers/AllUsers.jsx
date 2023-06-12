@@ -27,7 +27,9 @@ const AllUsers = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .patch(`http://localhost:5000/users/instructor/${user._id}`)
+          .patch(
+            `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/users/instructor/${user._id}`
+          )
           .then((res) => {
             if (res.data.modifiedCount) {
               Swal.fire({
@@ -56,7 +58,9 @@ const AllUsers = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .patch(`http://localhost:5000/users/admin/${user._id}`)
+          .patch(
+            `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/users/admin/${user._id}`
+          )
           .then((res) => {
             if (res.data.modifiedCount) {
               Swal.fire({
@@ -85,7 +89,9 @@ const AllUsers = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/delete-user/${user._id}`)
+          .delete(
+            `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/delete-user/${user._id}`
+          )
           .then((res) => {
             if (res.data.deletedCount > 0) {
               Swal.fire({

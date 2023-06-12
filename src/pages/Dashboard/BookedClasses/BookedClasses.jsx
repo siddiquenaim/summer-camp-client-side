@@ -25,7 +25,9 @@ const BookedClasses = () => {
       if (result.isConfirmed) {
         console.log(singleClass.classId);
         axios
-          .delete(`http://localhost:5000/delete-a-class/${singleClass._id}`)
+          .delete(
+            `https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/delete-a-class/${singleClass._id}`
+          )
           .then((res) => {
             console.log(res.data);
             if (res.data.deletedCount > 0) {

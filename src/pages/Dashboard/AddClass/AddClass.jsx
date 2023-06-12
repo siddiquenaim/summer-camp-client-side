@@ -30,7 +30,10 @@ const AddClass = () => {
     console.log(classInfo);
 
     axios
-      .post("http://localhost:5000/add-a-class", classInfo)
+      .post(
+        "https://b7a12-summer-camp-server-side-siddiquenaim.vercel.app/add-a-class",
+        classInfo
+      )
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
