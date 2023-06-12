@@ -12,8 +12,6 @@ const Navbar = () => {
       .catch((error) => console.log(error));
   };
 
-  const allSelectedClass = useSelectedClasses();
-
   const navItems = (
     <>
       <li>
@@ -54,24 +52,22 @@ const Navbar = () => {
       {user ? (
         <>
           <li>
-            <Link onClick={handleLogOut}>Logout</Link>
+            <Link onClick={handleLogOut} className="hover:text-white">
+              Logout
+            </Link>
           </li>
 
           <li>
-            <div className="indicator">
-              <span className="indicator-item badge badge-secondary">
-                {allSelectedClass[0]?.length}
-              </span>
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive ? "#fff" : "#fff",
-                  background: isActive ? "#8B61C8" : "#6E479E",
-                })}
-                to="/dashboard/"
-              >
-                Dashboard
-              </NavLink>
-            </div>
+            <NavLink
+              className="rounded-lg"
+              style={({ isActive }) => ({
+                color: isActive ? "#fff" : "#fff",
+                background: isActive ? "#8B61C8" : "#6E479E",
+              })}
+              to="/dashboard/"
+            >
+              Dashboard
+            </NavLink>
           </li>
         </>
       ) : (
@@ -119,7 +115,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1"> {navItems}</ul>
+          <ul className="menu menu-horizontal px-3"> {navItems}</ul>
         </div>
         <div className="navbar-end">
           {user && (
@@ -148,7 +144,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52  text-black"
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-[#6E479E]rounded-box w-52  text-black "
             >
               {navItems}
             </ul>

@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 
@@ -23,21 +22,17 @@ const Slider = () => {
         Join and Learn
       </h2>
       <Swiper
-        autoplay={{
-          delay: 1000,
-          disableOnInteraction: false,
-        }}
-        slidesPerView={4}
-        spaceBetween={100}
+        slidesPerView={3}
+        spaceBetween={30}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper mb-24"
+        className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide className="rounded-lg">
           <img className="rounded-lg" src={slide1} alt="" />
-          <h3 className="text-4xl  text-center mt-5 text-black">Drums</h3>
+          <h3 className="text-4xl text-center mt-5 text-black">Drums</h3>
         </SwiperSlide>
         <SwiperSlide>
           <img className="rounded-lg" src={slide2} alt="" />

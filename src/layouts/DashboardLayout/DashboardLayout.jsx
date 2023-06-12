@@ -4,6 +4,7 @@ import { FaBook, FaBookReader, FaUsers, FaWallet } from "react-icons/fa";
 import useAdmin from "../../hooks/useAdmin";
 import useStudent from "../../hooks/useStudent";
 import useInstructor from "../../hooks/useInstructor";
+import Footer from "../../pages/Shared/Footer/Footer";
 
 const DashboardLayout = () => {
   const [isStudent] = useStudent();
@@ -14,10 +15,10 @@ const DashboardLayout = () => {
       <Navbar></Navbar>
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content ">
+        <div className="drawer-content text-center mt-10 ">
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
+            className="btn btn-primary drawer-button lg:hidden bg-[#6E479E] hover:bg-[#1E0935]"
           >
             Open drawer
           </label>
@@ -74,6 +75,7 @@ const DashboardLayout = () => {
           </ul>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

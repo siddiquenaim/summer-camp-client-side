@@ -24,26 +24,20 @@ const InstructorCard = ({ instructor }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg border p-8 flex flex-col md:flex-row md:items-center">
-      <div className="flex items-center justify-center md:w-1/2">
-        <img
-          src={image}
-          alt={name}
-          className="w-64 h-64 rounded-full md:w-1/2"
-        />
-      </div>
-      <div className="md:w-1/2 md:pl-8 flex items-center justify-center mt-5 md:mt-0 md:justify-start">
-        <div>
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">{name}</h2>
-          <p className="text-gray-600 mb-2">{email}</p>
-          <p className="text-gray-600 mb-4">
+    <>
+      <div className="card lg:card-side bg-base-100 shadow-xl">
+        <figure>
+          <img src={image} className="h-[400px] w-[350px]" alt="Album" />
+        </figure>
+        <div className="card-body lg:mr-20">
+          <h2 className="card-title">{name}</h2>
+          <p>Email: {email}</p>
+          <p>
             Number of classes taken:{" "}
             <span className="font-semibold">{classes.length}</span>
           </p>
-          <p className="text-gray-600 mb-4">
-            Total number of students:{" "}
-            <span className="font-semibold">{totalStudents}</span>
-          </p>
+          <p>Number of students: {totalStudents}</p>
+          <p>Email: {email}</p>
           {classes.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold text-gray-800">
@@ -60,7 +54,7 @@ const InstructorCard = ({ instructor }) => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ const ClassCard = (singleClass) => {
   const [, refetch] = useSelectedClasses();
 
   const handleSelectClass = (singleClass) => {
-    const { _id, name, image, price } = singleClass;
+    const { _id, name, image, price, availableSeats } = singleClass;
 
     if (user && user?.email) {
       const selectedClass = {
@@ -60,7 +60,7 @@ const ClassCard = (singleClass) => {
   };
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl border">
+    <div className="card w-full mx-auto bg-base-100 shadow-xl border">
       <figure className="px-10 pt-10">
         <img
           src={singleClass.singleClass.image}
@@ -75,7 +75,7 @@ const ClassCard = (singleClass) => {
           <button
             disabled={disabled}
             onClick={() => handleSelectClass(singleClass.singleClass)}
-            className="btn btn-primary"
+            className="btn text-white bg-[#6E479E] hover:bg-[#1E0935]"
           >
             Select Class
           </button>

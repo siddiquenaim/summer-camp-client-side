@@ -42,11 +42,11 @@ const BookedClasses = () => {
 
   return (
     <div>
-      <div className="lg:flex justify-between w-full gap-8">
-        <h2 className="text-3xl font-bold">
+      <div className="lg:flex justify-center w-full gap-8">
+        <h2 className="text-3xl">
           Total Classes Booked: {allSelectedClass.length}
         </h2>
-        <h2 className="text-3xl font-bold">Total Price: {totalPrice}</h2>
+        <h2 className="text-3xl">Total Price: {totalPrice}</h2>
       </div>
       <div className="overflow-x-auto">
         <table className="table my-10">

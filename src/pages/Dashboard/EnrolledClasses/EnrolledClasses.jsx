@@ -19,16 +19,15 @@ const EnrolledClasses = () => {
 
   return (
     <div>
-      <h3>All the enrolled classes</h3>
+      <h3 className="mt-10 text-3xl">All the enrolled classes</h3>
       <div>
-        <table className="table my-10">
+        <table className="table my-10 mx-10">
           {/* head */}
           <thead>
             <tr>
               <th>#</th>
               <th>Image</th>
               <th>Name</th>
-
               <th className="text-right">Price</th>
               <th className="text-center">Date</th>
               <th></th>
@@ -54,7 +53,7 @@ const EnrolledClasses = () => {
                 <td>{payment.class.name}</td>
 
                 <td className="text-right">{payment.class.price}</td>
-                <td className="text-right">{payment.date}</td>
+                <td className="text-center">{payment.date}</td>
               </tr>
             ))}
           </tbody>
