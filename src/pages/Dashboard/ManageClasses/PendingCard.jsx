@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 
 const PendingCard = ({ singlePendingClass, refetch }) => {
   const {
+    _id,
     name,
     image,
     instructorName,

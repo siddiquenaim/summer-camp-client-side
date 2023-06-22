@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const DeniedCard = ({ singleDeniedClass }) => {
   const {
+    _id,
     name,
     image,
     instructorName,
@@ -41,7 +42,7 @@ const DeniedCard = ({ singleDeniedClass }) => {
           </i>
         ) : (
           <Link to={`/dashboard/feedback/${_id}`}>
-            <div className="card-actions justify-end">
+            <div className="card-actions justify-center">
               <button className="btn btn-error">Feedback</button>
             </div>
           </Link>

@@ -81,7 +81,7 @@ const Navbar = () => {
                 color: isActive ? "#fff" : "#fff",
                 background: isActive ? "#8B61C8" : "#6E479E",
               })}
-              to="/dashboard/"
+              to="/dashboard"
             >
               Dashboard
             </NavLink>

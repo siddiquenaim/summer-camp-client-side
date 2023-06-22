@@ -1,5 +1,6 @@
 const ApprovedCard = ({ singleApprovedClass }) => {
   const {
+    _id,
     name,
     image,
     instructorName,
