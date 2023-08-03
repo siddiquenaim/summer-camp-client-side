@@ -25,18 +25,18 @@ const PopularInstructors = () => {
       >
         Our Top Instructors!
       </h2>
-      <div className="grid md:grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-3 gap-5">
         {popularInstructors.map((singleInstructor) => (
           <div
             data-aos="flip-right"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1500"
             key={singleInstructor._id}
-            className="card lg:card-side bg-base-100 shadow-xl border border-[#6e479e3c]"
+            className="card bg-base-100 shadow-xl border border-[#6e479e3c]"
           >
             <figure>
               <img
-                className="h-[400px] w-[360px]"
+                className="h-[350px] w-full"
                 src={singleInstructor.image}
                 alt="Album"
               />
