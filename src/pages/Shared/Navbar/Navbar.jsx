@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import "./Navbar.css";
 import { FaLightbulb } from "react-icons/fa";
+import { JackInTheBox } from "react-awesome-reveal";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -119,11 +120,15 @@ const Navbar = () => {
     <div className="bg-[#6E479E] text-white">
       <nav className="navbar  lg:w-[90%] mx-auto">
         <div className="navbar-start">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/014/390/592/original/white-acoustic-guitar-3d-rendering-icon-on-transparent-background-png.png"
-            className="h-[40px] w-[40px]"
-            alt=""
-          />
+          <JackInTheBox>
+            {" "}
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/014/390/592/original/white-acoustic-guitar-3d-rendering-icon-on-transparent-background-png.png"
+              className="h-[40px] w-[40px]"
+              alt=""
+            />
+          </JackInTheBox>
+
           <Link
             to="/"
             className="normal-case text-2xl font-extrabold logo lg:flex mx-2"

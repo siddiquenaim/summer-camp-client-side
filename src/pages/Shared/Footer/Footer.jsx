@@ -1,15 +1,18 @@
 import React from "react";
+import { JackInTheBox } from "react-awesome-reveal";
 
 const Footer = () => {
   return (
     <div>
       <footer className="footer footer-center p-10 bg-[#402A4D] text-white">
         <div>
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/014/390/592/original/white-acoustic-guitar-3d-rendering-icon-on-transparent-background-png.png"
-            className="h-[60px] w-[60px]"
-            alt=""
-          />
+          <JackInTheBox>
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/014/390/592/original/white-acoustic-guitar-3d-rendering-icon-on-transparent-background-png.png"
+              className="h-[60px] w-[60px]"
+              alt=""
+            />
+          </JackInTheBox>
           <p className="font-bold">
             Melodica Academy
             <br />

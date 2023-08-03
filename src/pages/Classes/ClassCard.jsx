@@ -59,7 +59,7 @@ const ClassCard = ({ singleClass }) => {
   return (
     <div
       className={`"card w-full mx-auto bg-base-100 border rounded-lg shadow-xl border" ${
-        availableSeats === 0 && "bg-red-600"
+        availableSeats === 0 && "bg-red-600 text-white"
       }`}
     >
       <figure className="px-10 pt-10">
