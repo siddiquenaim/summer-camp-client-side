@@ -23,11 +23,11 @@ const PopularClasses = () => {
       >
         Our Popular Classes!
       </h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-5">
         {popularClasses?.map((singleClass) => (
           <div
             key={singleClass?._id}
-            className="card w-full shadow-xl border bg-[#6e479e3c]"
+            className="card lg:card-side w-full shadow-xl border bg-[#6e479e3c]"
           >
             <div
               className="card-body text-center"
@@ -51,7 +51,7 @@ const PopularClasses = () => {
             </div>
             <figure>
               <img
-                className="h-[225px] w-[300px]"
+                className="h-[250px] w-[300px]"
                 src={singleClass?.image}
                 alt="Shoes"
               />
