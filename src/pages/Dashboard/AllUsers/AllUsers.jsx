@@ -111,8 +111,8 @@ const AllUsers = () => {
   return (
     <div className="mb-20">
       <h1 className="text-3xl text-center my-10">Manage All Users</h1>
-      <div className="overflow-x-auto">
-        <table className="table my-10">
+      <div className="overflow-x-scroll lg:overflow-x-auto">
+        <table className="table w-[90%] lg:w-[90%] mx-auto mb-20">
           {/* head */}
           <thead>
             <tr>

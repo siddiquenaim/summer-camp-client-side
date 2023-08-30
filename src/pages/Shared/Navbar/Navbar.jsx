@@ -163,7 +163,7 @@ const Navbar = () => {
               </div>
             </div>
           )}
-          <div className="dropdown dropdown-left">
+          <div className="dropdown dropdown-left z-10">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -182,9 +182,45 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-[#6E479E]rounded-box w-52  text-black "
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-[#6E479E]rounded-box w-52  text-black bg-white rounded-lg"
             >
-              {navItems}
+              <>
+                <li>
+                  <NavLink to="/">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/instructors">Instructors</NavLink>
+                </li>
+
+                <li>
+                  <NavLink to="/classes">Classes</NavLink>
+                </li>
+
+                {user ? (
+                  <>
+                    <li>
+                      <Link onClick={handleLogOut} className="hover:text-white">
+                        Logout
+                      </Link>
+                    </li>
+
+                    <li>
+                      <NavLink className="rounded-lg" to="/dashboard">
+                        Dashboard
+                      </NavLink>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <NavLink to="login">Login</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="register">Register</NavLink>
+                    </li>
+                  </>
+                )}
+              </>
             </ul>
           </div>
         </div>
