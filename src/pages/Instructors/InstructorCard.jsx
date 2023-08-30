@@ -26,7 +26,7 @@ const InstructorCard = ({ instructor }) => {
   return (
     <>
       <div className="card lg:card-side bg-base-100 shadow-xl">
-        <figure>
+        <figure className="h-[400px] w-[350px]">
           <img src={image} className="h-[400px] w-[350px]" alt="Album" />
         </figure>
         <div className="card-body lg:mr-20">
@@ -44,14 +44,10 @@ const InstructorCard = ({ instructor }) => {
           </p>
           {classes.length > 0 && (
             <div>
-              <h3 className="text-lg font-bold text-gray-800">
-                Classes taken:
-              </h3>
+              <h3 className="text-lg font-bold">Classes taken:</h3>
               <ul className="list-disc ml-6 mb-4">
                 {classes?.map((singleClass, i) => (
-                  <li key={i} className="text-gray-600">
-                    {singleClass.name}
-                  </li>
+                  <li key={i}>{singleClass.name}</li>
                 ))}
               </ul>
             </div>

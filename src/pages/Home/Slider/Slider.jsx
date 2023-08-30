@@ -41,7 +41,7 @@ const Slider = () => {
             src={slide1}
             alt=""
           />
-          <h3 className="text-4xl text-center mt-10 text-black">Drums</h3>
+          <h3 className="text-4xl text-center mt-10">Drums</h3>
         </SwiperSlide>
         <SwiperSlide>
           <img
@@ -52,7 +52,7 @@ const Slider = () => {
             src={slide2}
             alt=""
           />
-          <h3 className="text-4xl  text-center mt-10 text-black">Guitar</h3>
+          <h3 className="text-4xl  text-center mt-10">Guitar</h3>
         </SwiperSlide>
         <SwiperSlide>
           <img
@@ -63,7 +63,7 @@ const Slider = () => {
             src={slide5}
             alt=""
           />
-          <h3 className="text-4xl  text-center mt-10 text-black">Songs</h3>
+          <h3 className="text-4xl  text-center mt-10">Songs</h3>
         </SwiperSlide>
         <SwiperSlide>
           <img
@@ -74,7 +74,7 @@ const Slider = () => {
             src={slide3}
             alt=""
           />
-          <h3 className="text-4xl  text-center mt-10 text-black">Piano</h3>
+          <h3 className="text-4xl  text-center mt-10">Piano</h3>
         </SwiperSlide>
         <p className="my-4">.</p>
         <SwiperSlide>
@@ -86,7 +86,7 @@ const Slider = () => {
             src={slide4}
             alt=""
           />
-          <h3 className="text-4xl  text-center mt-10 text-black">Violin</h3>
+          <h3 className="text-4xl  text-center mt-10">Violin</h3>
         </SwiperSlide>
       </Swiper>
     </section>

@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import { Fade } from "react-awesome-reveal";
 
 const Banner = () => {
+  const theme = localStorage.getItem("theme");
   return (
     <div className="md:flex text-center md:text-left w-[90%] mx-auto mt-20 mb-10">
       <div className="md:w-[50%] flex justify-center items-center mb-10 md:mb-0">
@@ -27,7 +28,7 @@ const Banner = () => {
           </div>
           <br />
           <Fade>
-            <p className="my-5 text-[#333333]">
+            <p className="my-5 ">
               Embark on a musical journey like never before. <br /> <br />
               Explore our expert-led classes, unlock your creative potential,
               and master the art of music. Whether you're a beginner or a

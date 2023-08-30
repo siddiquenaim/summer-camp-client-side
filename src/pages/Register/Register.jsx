@@ -60,12 +60,12 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-white my-20">
+    <div className="my-20">
       <div>
         <h1 className="text-5xl font-bold text-center mb-10">Register now!</h1>
       </div>
       <div className="hero">
-        <div className="hero-content flex-col lg:flex-row">
+        <div className="hero-content flex-col lg:flex-row gap-10">
           <div className="text-center lg:text-left">
             <lottie-player
               src="https://assets4.lottiefiles.com/private_files/lf30_ONrIKs.json"
@@ -76,7 +76,7 @@ const Register = () => {
               autoplay
             ></lottie-player>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 border">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
