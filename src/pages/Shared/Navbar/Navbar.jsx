@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const handleToggle = (e) => {
     if (e.target.checked) {
-      setTheme("dark");
+      setTheme("night");
     } else {
       setTheme("light");
     }
