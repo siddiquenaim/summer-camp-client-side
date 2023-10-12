@@ -3,6 +3,7 @@ import ChatBot from "../ChatBot/ChatBot";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstructors from "../PopularInstructors/PopularInstructors";
 import Slider from "../Slider/Slider";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -11,7 +12,8 @@ const Home = () => {
       <Slider></Slider>
       <PopularInstructors></PopularInstructors>
       <PopularClasses></PopularClasses>
-      <ChatBot></ChatBot>
+      <Testimonial></Testimonial>
+      {/* <ChatBot></ChatBot> */}
     </div>
   );
 };
