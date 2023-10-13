@@ -24,7 +24,7 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="my-10">
+    <div className="w-[95%] md:w-[90%] mx-auto my-20">
       <h2
         className="text-5xl text-center font-bold mb-20"
         data-aos="fade-down"
@@ -39,7 +39,7 @@ const Testimonial = () => {
             return (
               <div key={client?._id}>
                 {currentTab === i && (
-                  <div className="flex flex-col lg:w-[75%] mx-auto bg-[#ddd4e877] py-14 px-16 rounded-ss-3xl rounded-ee-3xl h-[360px] lg:h-[280px] space-y-4">
+                  <div className="flex flex-col lg:w-[75%] mx-auto bg-[#ddd4e877] py-14 px-16 rounded-ss-3xl rounded-ee-3xl h-[360px] lg:h-[300px] space-y-4">
                     <div
                       className="mx-auto text-center"
                       data-aos="zoom-in"
@@ -47,7 +47,7 @@ const Testimonial = () => {
                       data-aos-duration="1000"
                     >
                       <img
-                        className="h-[60px] w-[60px] rounded-full"
+                        className="h-[75px] w-[75px] rounded-full"
                         src={client?.photo}
                         alt=""
                       />
@@ -64,7 +64,7 @@ const Testimonial = () => {
                       </div>
                     </div>
                     <p
-                      className="flex items-center justify-center"
+                      className="text-center"
                       data-aos="zoom-in"
                       data-aos-easing="ease-out-cubic"
                       data-aos-duration="1000"

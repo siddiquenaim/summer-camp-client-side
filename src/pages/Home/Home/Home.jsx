@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import ChatBot from "../ChatBot/ChatBot";
+import ContactUs from "../ContactUs/ContactUs";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstructors from "../PopularInstructors/PopularInstructors";
 import Slider from "../Slider/Slider";
@@ -13,7 +14,8 @@ const Home = () => {
       <PopularInstructors></PopularInstructors>
       <PopularClasses></PopularClasses>
       <Testimonial></Testimonial>
-      {/* <ChatBot></ChatBot> */}
+      <ContactUs></ContactUs>
+      <ChatBot></ChatBot>
     </div>
   );
 };
