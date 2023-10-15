@@ -40,12 +40,6 @@ const ContactUs = () => {
       );
   };
 
-  // const handleMessage = (event) => {
-  //   event.preventDefault();
-  //   const form = event.target;
-  //
-  //
-  // };
   return (
     <div className="w-[95%] md:w-[90%] mx-auto my-20">
       <h2
@@ -56,7 +50,7 @@ const ContactUs = () => {
       >
         Contact Us
       </h2>
-      <div className="lg:flex justify-center space-y-12">
+      <div className="lg:flex justify-center space-b-12">
         <div className="flex justify-center items-center  mx-auto">
           <div className="space-y-5">
             <div>
