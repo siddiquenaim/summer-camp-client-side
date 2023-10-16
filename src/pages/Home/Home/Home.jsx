@@ -1,7 +1,8 @@
 import Banner from "../Banner/Banner";
 import ChatBot from "../ChatBot/ChatBot";
 import ContactUs from "../ContactUs/ContactUs";
-import Feedback from "../Feedback/Feedback";
+import FAQ from "../FAQ/FAQ";
+
 import Partners from "../Partners/Partners";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstructors from "../PopularInstructors/PopularInstructors";
@@ -17,6 +18,7 @@ const Home = () => {
       <PopularClasses></PopularClasses>
       <Testimonial></Testimonial>
       <Partners></Partners>
+      <FAQ></FAQ>
       <ContactUs></ContactUs>
       <ChatBot></ChatBot>
     </div>

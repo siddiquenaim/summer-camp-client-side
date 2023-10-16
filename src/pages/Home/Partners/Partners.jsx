@@ -17,11 +17,36 @@ const Partners = () => {
         Our Partners
       </h2>
       <div className="lg:flex justify-center gap-10">
-        <img src={ibanez} className="h-[120px] mx-auto" alt="" />
-        <img src={gibson} className="h-[120px] mx-auto" alt="" />
-        <img src={beatles} className="h-[120px] mx-auto" alt="" />
-        <img src={gretsch} className="h-[120px] mx-auto" alt="" />
-        <img src={fender} className="h-[120px] mx-auto" alt="" />
+        <img
+          data-aos="fade-right"
+          src={ibanez}
+          className="h-[120px] mx-auto"
+          alt=""
+        />
+        <img
+          data-aos="fade-down"
+          src={gibson}
+          className="h-[120px] mx-auto"
+          alt=""
+        />
+        <img
+          data-aos="zoom-in-up"
+          src={beatles}
+          className="h-[120px] mx-auto"
+          alt=""
+        />
+        <img
+          data-aos="fade-up"
+          src={gretsch}
+          className="h-[120px] mx-auto"
+          alt=""
+        />
+        <img
+          data-aos="fade-left"
+          src={fender}
+          className="h-[120px] mx-auto"
+          alt=""
+        />
       </div>
     </div>
   );
